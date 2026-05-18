@@ -6,12 +6,12 @@ body {
   padding: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
   background: #1e1e1e;
@@ -43,14 +43,18 @@ select {
   border-radius: 4px;
 }
 
-input[type="text"] {
-  flex: 1;
+input[type="text"],
+input[type="number"] {
   padding: 10px;
   font-size: 16px;
   background-color: #333;
   color: #e0e0e0;
   border: 1px solid #555;
   border-radius: 4px;
+}
+
+#lettersInput {
+  flex: 1;
 }
 
 button {
@@ -71,7 +75,34 @@ button:hover {
 .note {
   font-size: 0.9em;
   color: #aaa;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.modifiers-panel {
+  margin-bottom: 20px;
+  background: #2a2a2a;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modifiers-panel h2 {
+  margin-top: 0;
+  color: #ff79c6;
+}
+
+.modifier-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modifier-input input[type="text"],
+.modifier-input input[type="number"] {
+  width: 70px;
+  padding: 5px;
 }
 
 #results {
@@ -91,6 +122,10 @@ button:hover {
   color: #ddd;
 }
 
+.word-list li {
+  margin-bottom: 4px;
+}
+
 .collapsible {
   cursor: pointer;
   margin-bottom: 0.3em;
@@ -104,8 +139,4 @@ button:hover {
 
 .collapsible.collapsed::after {
   content: ' ▶';
-}
-
-.collapsible + ul {
-  transition: all 0.2s ease;
 }
