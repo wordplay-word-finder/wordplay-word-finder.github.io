@@ -9,17 +9,93 @@
 <body>
   <div class="container">
     <h1>Word Finder</h1>
+
     <div class="top-controls">
       <input type="text" id="lettersInput" placeholder="Enter letters (use * for wildcards)" />
       <button id="findWords">Find Words</button>
+
       <select id="sortSelect">
         <option value="length">Sort by Length</option>
         <option value="points">Sort by Points</option>
       </select>
     </div>
-    <p class="note">Note: Point totals do not account for modifiers.</p>
+
+    <p class="note">Point totals account for selected modifiers.</p>
+
+    <div class="modifiers-panel">
+      <h2>Modifiers</h2>
+
+      <label><input type="checkbox" id="modFourthTile"> Fourth tile scores 3x</label>
+      <label><input type="checkbox" id="modSecondTile"> Second tile scores 3x</label>
+      <label><input type="checkbox" id="modQu"> Q becomes Qu</label>
+      <label><input type="checkbox" id="modFirstVowel5x"> First tile vowel scores 5x</label>
+
+      <div class="modifier-input">
+        <label><input type="checkbox" id="modStartsWith"> Word begins with</label>
+        <input type="text" id="startsWithLetter" maxlength="1">
+      </div>
+
+      <div class="modifier-input">
+        <label><input type="checkbox" id="modEndsWith"> Word ends with</label>
+        <input type="text" id="endsWithLetter" maxlength="1">
+      </div>
+
+      <label><input type="checkbox" id="modOddEven"> Odd/even tile bonus</label>
+
+      <div class="modifier-input">
+        <label><input type="checkbox" id="modExactTiles"> Exact tile count bonus</label>
+        <input type="number" id="exactTilesCount" min="1">
+      </div>
+
+      <label><input type="checkbox" id="modFiveTiles"> Five tile first/last 3x</label>
+      <label><input type="checkbox" id="modSZ"> S and Z interchangeable</label>
+      <label><input type="checkbox" id="modLowestConsonant"> Lowest consonant 5x</label>
+      <label><input type="checkbox" id="modYVowel"> Y is vowel</label>
+
+      <div class="modifier-input">
+        <label><input type="checkbox" id="modRefreshes"> Add refreshes</label>
+        <input type="number" id="refreshCount" min="0">
+      </div>
+
+      <div class="modifier-input">
+        <label><input type="checkbox" id="modSellPrices"> Add modifier sell prices</label>
+        <input type="number" id="sellPricesAmount" min="0">
+      </div>
+
+      <label><input type="checkbox" id="modDoubleLongBonus"> Double long word bonus</label>
+      <label><input type="checkbox" id="modUniqueLetters"> Unique letters 1.5x</label>
+      <label><input type="checkbox" id="modFirstLastVowel"> First/last vowels 2x</label>
+      <label><input type="checkbox" id="modFirstLastSame"> First/last same 2x</label>
+      <label><input type="checkbox" id="modFirstVowelFinal"> First letter vowel 1.5x</label>
+
+      <div class="modifier-input">
+        <label><input type="checkbox" id="modBeginsMultiplier"> Begins with letter 2x</label>
+        <input type="text" id="beginsMultiplierLetter" maxlength="1">
+      </div>
+
+      <label><input type="checkbox" id="modDoubleLetters"> Double letters 1.5x</label>
+      <label><input type="checkbox" id="modNoDoubleConsonants"> No double consonants 2x</label>
+
+      <div class="modifier-input">
+        <label><input type="checkbox" id="modEndsMultiplier"> Ends with letter 2x</label>
+        <input type="text" id="endsMultiplierLetter" maxlength="1">
+      </div>
+
+      <label><input type="checkbox" id="modThreeVowels"> 3 different vowels 2x</label>
+      <label><input type="checkbox" id="modMoreVowels"> More vowels than consonants 2x</label>
+      <label><input type="checkbox" id="modNoE"> No E 2x</label>
+
+      <div class="modifier-input">
+        <label><input type="checkbox" id="modLetterMultiplier"> Multiply by number of letters</label>
+        <input type="text" id="letterMultiplierLetter" maxlength="1">
+      </div>
+
+      <label><input type="checkbox" id="modRe"> Any word can start with RE</label>
+    </div>
+
     <div id="results"></div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
