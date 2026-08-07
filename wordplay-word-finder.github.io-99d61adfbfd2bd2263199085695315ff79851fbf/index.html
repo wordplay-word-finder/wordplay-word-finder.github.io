@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Word Finder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Word Finder</h1>
+    <div class="top-controls">
+      <input type="text" id="lettersInput" placeholder="Enter letters (use * for wildcards)" />
+      <button id="findWords">Find Words</button>
+      <select id="sortSelect">
+        <option value="length">Sort by Length</option>
+        <option value="points">Sort by Points</option>
+      </select>
+    </div>
+    <p class="note">Note: Point totals do not account for modifiers.</p>
+    <div id="results"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
